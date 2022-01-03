@@ -13,36 +13,35 @@ Plug 'dense-analysis/ale'
 Plug 'honza/vim-snippets'
 if (has("nvim"))
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'        " Não está instalado "
 endif
 
 call plug#end()
 
 " Global Sets """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-syntax on            " Enable syntax highlight
-set nu               " Enable line numbers
-set tabstop=4        " Show existing tab with 4 spaces width
-set softtabstop=4    " Show existing tab with 4 spaces width
-set shiftwidth=4     " When indenting with '>', use 4 spaces width
-set expandtab        " On pressing tab, insert 4 spaces
-set smarttab         " insert tabs on the start of a line according to shiftwidth
-set smartindent      " Automatically inserts one extra level of indentation in some cases
-set hidden           " Hides the current buffer when a new file is openned
-set incsearch        " Incremental search
-set ignorecase       " Ingore case in search
-set smartcase        " Consider case if there is a upper case character
-set scrolloff=8      " Minimum number of lines to keep above and below the cursor
-"set colorcolumn=100  " Draws a line at the given line to keep aware of the line size
-set signcolumn=yes   " Add a column on the left. Useful for linting
-set cmdheight=2      " Give more space for displaying messages
-set updatetime=100   " Time in miliseconds to consider the changes
-set encoding=utf-8   " The encoding should be utf-8 to activate the font icons
-set nobackup         " No backup files
-set nowritebackup    " No backup files
-set splitright       " Create the vertical splits to the right
-set splitbelow       " Create the horizontal splits below
-set autoread         " Update vim after file update from outside
-set mouse=a          " Enable mouse support
+syntax on            " Habilita o syntax highlight
+set nu               " Habilita o enumeração de linhas
+set tabstop=4        " Atribui ao tab o valor de 4 spaces
+set softtabstop=4    " Mostrar a guia existente com 4 espaços de largura
+set shiftwidth=4     " Quando identado com '>', usa 4 espaços de tamanho
+set expandtab        " Caso pressionado tab, insere 4 espaços de tamanho
+set smarttab         " Insere tab em alguns casos
+set smartindent      " Insere automaticamenta a identação em alguns casos.
+set hidden           " Esconde o buffer atual quando um novo arquivo é aberto
+set incsearch        " Incrementa busca
+set ignorecase       " Ingnora o case na busca
+set smartcase        " Diferencia maiúsculas de minusculas na busca
+set scrolloff=8      " Estabelece o número mínimo de linhas abaixo da Barra de Digitação
+"set colorcolumn=100  " Desenha um linha de referença após 100 caracteres. Usado como referencial
+set signcolumn=yes   " Adiciona um linha a esqueda
+set cmdheight=2      " Define o espaço de 2 linhas no terminal
+set updatetime=100   " Atribui 0.1s o tempo necessário para atualização
+set encoding=utf-8   " Torna o codigo UTF-8
+set nobackup         " Sem backup arquivos
+set nowritebackup    " Sem backup arquivos
+set splitright       " Cria splits verticiais para a direita
+set splitbelow       " Cria splits horizontais para baixo
+set autoread         " Atualiza o vim
+set mouse=a          " Habilita o suporte a mouse
 filetype on          " Detect and set the filetype option and trigger the FileType Event
 filetype plugin on   " Load the plugin file for the file type, if any
 filetype indent on   " Load the indent file for the file type, if any
@@ -56,14 +55,14 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-let g:sonokai_style = 'andromeda'
-let g:sonokai_enable_italic = 1
-let g:sonokai_disable_italic_comment = 0
-let g:sonokai_diagnostic_line_highlight = 1
-let g:sonokai_current_word = 'bold'
+let g:sonokai_style = 'andromeda'               " Estabele o 'andromeda' como tema usudo
+let g:sonokai_enable_italic = 1                 " Habilita p italico
+let g:sonokai_disable_italic_comment = 0        " Habilita o italico nos comentários
+let g:sonokai_diagnostic_line_highlight = 1     " Habilita o destaque de linha diagnosticada
+let g:sonokai_current_word = 'bold'             " Habilita o Negrito na palavra atual
 colorscheme sonokai
 
-if (has("nvim")) "Transparent background. Only for nvim
+if (has("nvim")) "Fundo Transparent. Apenas para NeoVim
     highlight Normal guibg=NONE ctermbg=NONE
     highlight EndOfBuffer guibg=NONE ctermbg=NONE
 endif
@@ -88,14 +87,15 @@ let g:ale_fix_on_save = 1
 
 " Remaps """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nmap <C-a> :NERDTreeToggle<CR>              " Habilita a arvore de diretórios com ctrl + a
-map <C-h> <c-w>h
-map <C-l> <c-w>l
-nmap bn :bn<CR>
-nmap bb :bp<CR>
-nmap bd :bd<CR>
-nmap sh :split<CR>
-nmap sv :vsplit<CR>
+map <C-h> <c-w>h                            " Navega para a Split da esquerda
+map <C-l> <c-w>l                            " Navega para a Split da direita
+nmap bn :bn<CR>                             " Buffer Next, Altera para o buffer posterior
+nmap bb :bp<CR>                             " Buffer Before, Navega para o Buffer anterior
+nmap bd :bd<CR>                             " Buffer Delete, Deleta o buffer atual
+nmap sh :split<CR>                          " Split Horizontal, Cria um split (divisão na tela) horizontal
+nmap sv :vsplit<CR>                         " Split Vertical, Cria um split (divisão na tela) vertical
 nmap nt :tabe<CR>                           " Criação de novas tabs"
+
 " Autocmd """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Automatização de comandos
 "
