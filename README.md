@@ -14,7 +14,7 @@ Esse script configura o NeoVim. Aperfeiçoando-o, adicionando novas ferramentas,
 
 ### Nodejs
 
-    $ exit
+    $ reset
 > Fecha o terminal atual e abra um novo.
 
     $ nvm install --lts
@@ -50,4 +50,4 @@ Com o arquivo aberto, digite `:PlugInstall` para instalar todos os pluggins do s
 
 Feche e salve o nvim `:wq`. 
 
-Ele já estará pronto para usar!!!
+Ele já estará pronto para codar! 👨‍💻
